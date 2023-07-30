@@ -8,7 +8,7 @@ const connectDB=async()=>{
         dialect:"mysql"
     })
     try {
-        await sequelize.authenticate()
+        await sequelize.authenticate().then(()=>{})
         console.log('Database connected successfully.')
     } catch (error) {
         console.log('unable to connect',error)
